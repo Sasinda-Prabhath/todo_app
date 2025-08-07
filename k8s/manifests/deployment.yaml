@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo_app
+  labels:
+    app: todo_app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo_app
+  template:
+    metadata:
+      labels:
+        app: todo_app
+    spec:
+      containers:
+      - name: todo_app
+        image: todoclusterregistry.azurecr.io/todo_app:v1
+        ports:
+        - containerPort: 8081
