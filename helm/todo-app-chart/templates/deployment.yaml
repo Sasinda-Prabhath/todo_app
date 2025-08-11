@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo-app
-        image: todoclusterregistry.azurecr.io/todo_app:{{ .Values.image.tag }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
         - containerPort: 8081
