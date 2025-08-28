@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: todoclusterregistry.azurecr.io/todo_app
-  tag: "16893493622"
+  tag: "v1"
   pullPolicy: IfNotPresent
 
 ingress:
