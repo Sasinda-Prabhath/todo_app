@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: todoclusterregistry.azurecr.io/todo_app
+  tag: "17294331306"
+  pullPolicy: IfNotPresent
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific

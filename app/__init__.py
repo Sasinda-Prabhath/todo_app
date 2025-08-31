@@ -1,7 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+
 db = SQLAlchemy()
+
 
 def create_app():
     app = Flask(__name__)
@@ -10,7 +12,8 @@ def create_app():
     db.init_app(app)
 
     from .routes import todo_bp
-    app.register_blueprint(todo_bp, url_prefix='/todoapp')  # 🟨 Mount at /todoapp
+    # Mount at /todoapp
+    app.register_blueprint(todo_bp, url_prefix='/todoapp')
 
     with app.app_context():
         db.create_all()
